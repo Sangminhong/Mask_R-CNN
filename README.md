@@ -14,3 +14,8 @@
     <img src="Images/Feature pyramid networkk architecture.PNG" width="300" height="150" />
    
    
+ ### Step 1
+ * RPN scans all FPN path and prposes regions where it may contain objects
+ * Anchors are set of boxes sharing the same center 
+ * RPN uses the anchors to predict and output the coordinates and thes size of the object.
+ 
