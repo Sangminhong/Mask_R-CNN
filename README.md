@@ -19,3 +19,9 @@
  * Anchors are set of boxes sharing the same center 
  * RPN uses the anchors to predict and output the coordinates and thes size of the object.
  
+### Step 2
+* ROI align locates the relevent areas of fetaure map
+* One branch generates masks for each object in pixel level
+
+### Architecture of Mask RCNN
+<img src="Images/architecture of mask RCNN.PNG" width="400" height="300" />
