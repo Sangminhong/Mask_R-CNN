@@ -1,0 +1,57 @@
+THIS FILE SIMPLY SHOWS HOW THE COCO DATASET IS CONSTRUCTED AND GIVES BASIC BACKGROUND WHEN LOADING THE DATASET
+
+
+What is COCO dataset: Simply, COCO is a large-scale obejct detection, segmentation, and captionaing dataset
+
+
+Train2017 folder, Val2017 folder -> jpg pictures
+Annotation foler -> json files
+
+Annotation types
+    - object detection, keypoint detection, stuff segmentation, panoptic segmentation, densepose, image captioning
+
+
+
+COCO dataset is formatted in json and consists of "info", "licenses", "images", "annotations", "categories"
+    "info" consists of year, version, description, contributor, url, date_created
+    
+    "licenses" : simply contains a list of image licenses that apply to images in the dataset 
+                 consistos id, name, url
+
+    "images" : contains the complete list of images in the dataset.
+               No bounding boxes and segmentations, just images and info
+               consists of id, width, height, file_name, license, flickr_url, coco_url, date_captured
+
+
+
+    (Object Detection) <object instance annotation>
+    "categories" : object contains a list of categories
+                   Each category has its supercategory
+
+                   "id"
+                   "name"
+                   "supercategory"                 
+    
+
+
+    "annotations" : a list of every individual object annotation from every image in the dataset
+                    
+                    "id"
+                    "image_id"
+                    "category_id"
+                    "segmentation"
+                    "area"
+                    "bbox"
+                    "iscrowd": 0 or 1
+
+
+
+COCO API ("ann" = annotation, "cat"=category, "img" = image): 
+    getAnnIds: Get ann ids that satisfy given filter condition
+    getCatIds: Get cat ids that satisfy given filter conditions
+    getImgIds: Get img ids that satisfy give filter conditions
+    LoadAnns: Load anns with the specifeid ids
+    LoadCats: Load cats with the specified ids
+    LoadImgs: Load imgs with the specified ids
+    LoadRes:  Load algorithm results and create API for accessing them
+    showAnns: Display the specified annotations
